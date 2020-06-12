@@ -59,5 +59,31 @@ var our_services = [
 
 ];
 
+var service_atual = 0;
+
+document.getElementById('service-previous').onclick = function(){
+  if(service_atual == 0){
+    var service_anterior = our_services.length - 1;
+  }else{
+    var service_anterior = service_atual - 1;
+  }
+
+  document.getElementById('service-title').innerHTML = our_services[service_anterior].title;
+  document.getElementById('service-text').innerHTML = our_services[service_anterior].text;
+  service_atual = service_anterior;
+};
+
+document.getElementById('service-next').onclick = function(){
+  if(service_atual == our_services.length - 1){
+    var service_seguinte = 0;
+  }else{
+    var service_seguinte = service_atual + 1;
+  }
+
+  document.getElementById('service-title').innerHTML = our_services[service_seguinte].title;
+  document.getElementById('service-text').innerHTML = our_services[service_seguinte].text;
+  service_atual = service_seguinte;
+};
+
 
 // Data Footer
